@@ -1,7 +1,7 @@
 FROM index.alauda.cn/tutum/centos:6.5
 MAINTAINER Gude  <zgdgude@gmail.com>
 RUN yum update -y
-RUN yum install m2crypto git libsodium -y
+RUN yum install m2crypto git libsodium wget tar -y
 #add chacha20
 RUN wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz && \
     tar zxf LATEST.tar.gz && \
