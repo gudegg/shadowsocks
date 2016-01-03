@@ -3,9 +3,8 @@ MAINTAINER Gude  <zgdgude@gmail.com>
 RUN yum update -y
 RUN yum install m2crypto git libsodium wget tar -y
 #add chacha20
-RUN wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz && \
-    tar zxf LATEST.tar.gz && \
-    cd libsodium* && \
+RUN wget https://github.com/jedisct1/libsodium/releases/download/1.0.7/libsodium-1.0.7.tar.gz && \
+    tar xf libsodium-1.0.7.tar.gz && cd libsodium-1.0.7 && \
     ./configure && make -j2 && make install && \
     ldconfig
 RUN git clone -b manyuser https://github.com/breakwa11/shadowsocks.git && \
